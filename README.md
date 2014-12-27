@@ -2,9 +2,11 @@ noolite-api-php-sdk-3
 =====================
 
 php SDK for noolite API
+-----------------------
 
-Example of usage
+Example of usage:
 
+```php
 <?php
 
 require_once "PR1132Gateway.php";
@@ -48,15 +50,15 @@ function Utf8ToWindows8Cmd($utf8_str)
         if($c == 208 || $c == 209) continue;
         
         
-        if($c >= 176 && $c <= 191) // a - ï
+        if($c >= 176 && $c <= 191) // a - Ð¿
         {
             $s .= chr($c - 16);
         }
-        else if($c >= 128 && $c <= 143) // ð - ÿ
+        else if($c >= 128 && $c <= 143) // Ñ€ - Ñ
         {
             $s .= chr($c + 96);
         }
-        else if($c >= 144 && $c <= 175) // À - ß
+        else if($c >= 144 && $c <= 175) // Ð - Ð¯
         {
             $s .= chr($c - 16);
         }      
@@ -71,7 +73,8 @@ function Utf8ToWindows8Cmd($utf8_str)
 }
 
 ?>
+```
 
 The result of work
 
-
+![result of the work](https://dl.dropboxusercontent.com/u/1631205/smart%20home/example.png)
